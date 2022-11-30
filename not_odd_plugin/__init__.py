@@ -20,7 +20,8 @@ class NotOddChecker(BaseChecker):
     }
 
     def visit_assign(self, node):
-        self.add_message("not-odd", node=node)
+        if node.value.value % 2 == 1:
+            self.add_message("not-odd", node=node)
 
 def register(linter: "PyLinter") -> None:
     """This required method auto registers the checker during initialization.

@@ -8,3 +8,5 @@ import astroid
 module = astroid.parse("x=1")
 module.repr_tree()
 ```
+
+3. add visit
