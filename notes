@@ -10,3 +10,6 @@ module.repr_tree()
 ```
 
 3. add visit
+
+4. infer
+https://pylint.pycqa.org/projects/astroid/en/latest/inference.html#what-where-is-inference
