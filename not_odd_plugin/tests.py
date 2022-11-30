@@ -49,3 +49,19 @@ class TestNotOddChecker(pylint.testutils.CheckerTestCase):
             ignore_position=True,
         ):
             self.checker.visit_assign(node)
+
+    def test_bin_opp(self):
+        node = astroid.extract_node(
+            """
+        x = 2 - 1 #@
+        """
+        )
+
+        with self.assertAddsMessages(
+            pylint.testutils.MessageTest(
+                msg_id="not-odd",
+                node=node,
+            ),
+            ignore_position=True,
+        ):
+            self.checker.visit_assign(node)

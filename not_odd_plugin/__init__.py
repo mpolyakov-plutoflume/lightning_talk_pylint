@@ -23,7 +23,7 @@ class NotOddChecker(BaseChecker):
         if isinstance(node.value, nodes.Const):
             if node.value.value % 2 == 1:
                 self.add_message("not-odd", node=node)
-        elif isinstance(node.value, nodes.Call):
+        elif isinstance(node.value, (nodes.Call, nodes.BinOp)):
             for infered in node.value.infer():
                 if isinstance(infered, nodes.Const):
                     if infered.value % 2 == 1:
