@@ -1,2 +1,10 @@
 1. scaffolding
 https://pylint.pycqa.org/en/latest/development_guide/how_tos/custom_checkers.html
+
+2. astroid
+https://pylint.pycqa.org/projects/astroid/en/latest/
+```
+import astroid
+module = astroid.parse("x=1")
+module.repr_tree()
+```
